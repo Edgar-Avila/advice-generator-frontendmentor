@@ -11,7 +11,7 @@
     throw new Error(data);
   };
 
-  const promise = getAdvice();
+  let promise = getAdvice();
 </script>
 
 <main>
@@ -25,7 +25,9 @@
       <p>{err}</p>
     {/await}
     <img src="pattern-divider-desktop.svg" alt="divider" class="divider">
-    <button>
+    <button on:click={() => {
+      promise = getAdvice();
+    }}>
       <img src="icon-dice.svg" alt="random">
     </button>
   </div>
